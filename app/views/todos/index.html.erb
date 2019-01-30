@@ -1,0 +1,16 @@
+<ul class="list-group">
+  <li class="list-group-item active">Index!!</li>
+  <% @todos.each do |t| %>
+  <li class="list-group-item">
+  <%= t.description %>
+  <%= link_to 'Show', todo_path(t.id), class: "btn btn-info" %> 
+  <%= link_to 'Edit', edit_path(t.id), class:"btn btn-warning"%>
+   <%= link_to 'Delete', delete_path(t.id), class: "btn btn-danger", method: :delete%>
+  <%= link_to 'Completado!!', complete_path(t.id), class:"btn btn-success", method: :patch%> 
+  </li>
+  
+  <%end %>
+</ul>
+
+
+<%= link_to 'Crear todo', new_path %>
